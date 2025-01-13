@@ -1,0 +1,57 @@
+body {
+    font-family: 'Inter', serif;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 300px;
+}
+
+label {
+    font-size: 0.75rem;
+    padding-top: 0.5rem;
+}
+
+input {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.4rem;
+    border-width: 1px;
+}
+
+.form-button {
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: aquamarine;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+
+.register-container, .login-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message{
+    color: red; 
+    margin-top: 10px; 
+}
+
+.login-reg-trans {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-reg-trans a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-reg-trans a:hover {
+    text-decoration: underline;
+}

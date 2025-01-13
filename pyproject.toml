@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "newsproject"
+version = "0.1.0"
+description = ""
+authors = ["Bezizvestnyi <chikovm@bk.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+asgiref = "3.8.1"
+django = "5.1"
+environs = "11.0.0"
+pillow = "11.1.0"
+psycopg2 = "2.9.9"
+python-decouple = "3.8"
+django-summernote = "^0.8.20.0"
+redis = "^5.2.1"
+celery = "^5.4.0"
+django-redis = "^5.4.0"
+celerybeat-redis = "^0.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

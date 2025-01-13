@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование новости</title>
+    <link rel="stylesheet" href="{% static 'News/css/edit_news.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Редактирование новости</h2>
+    <form id="newsForm" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <label for="{{ edit_form.title.id_for_label }}">Заголовок новости:</label>
+        {{ edit_form.title }}
+        {% if edit_form.title.errors %}
+            <div class="error-message">
+                {% for error in edit_form.title.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <label for="{{ edit_form.main_image.id_for_label }}">Главное изображение:</label>
+        {{ edit_form.main_image }}
+        {% if edit_form.main_image.errors %}
+            <div class="error-message">
+                {% for error in edit_form.main_image.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <div class="preview-container">
+            <label>Превью-изображение (генерируется автоматически):</label>
+            <img id="preview_image" src="{{ edit_form.image_preview.value }}" alt="Превью-изображение">
+            <input type="hidden" name="image_preview" id="image_preview">
+        </div>
+
+
+        <label for="{{ edit_form.text.id_for_label }}">Текст новости:</label>
+        {{ edit_form.text }}
+        {% if edit_form.text.errors %}
+            <div class="error-message">
+                {% for error in edit_form.text.errors %}
+                    <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <label for="author">Автор новости:</label>
+        <div>{{ request.user }}</div>
+
+        <button type="submit" class="form-button">Сохранить новость</button>
+    </form>
+    
+
+</div>
+
+<script>
+    console.log('jQuery:', typeof $);
+    console.log('Summernote:', typeof $.fn.summernote);
+    $('{{ edit_form.text.id_for_label }}').summernote({
+        placeholder: 'Hello Bootstrap 4',
+        tabsize: 2,
+        height: 100
+      });
+</script>
+
+</body>
+</html>

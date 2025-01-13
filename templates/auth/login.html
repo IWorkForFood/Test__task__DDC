@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ВХОД</title>
+    <link rel="stylesheet" href="{% static 'user_auth/css/reg.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-container">
+        
+        <form class="form" method="post">
+            {% csrf_token %}
+            <label for="{{ form.username.id_for_label }}">Логин</label>
+            {{ form.username }}
+            <label for="{{ form.password.id_for_label }}">Пароль</label>
+            {{ form.password }}
+            <button class="form-button" type="submit">Войти</button>
+        </form>
+        <div><a class="login-reg-trans" href="{% url 'user_auth:register' %}">Нет аккаунта?</a></div>
+        {% if form.non_field_errors %}
+        
+        <div class="error-message">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

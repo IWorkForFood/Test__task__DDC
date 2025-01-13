@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Основные стили, которые будут общими для всех страниц -->
+
+    <link rel="stylesheet" href="{% static 'News/css/base.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Дополнительные стили, которые могут быть добавлены в каждом шаблоне -->
+    {% block extra_styles %}
+    {% endblock %}
+</head>
+<body>
+
+<!-- Шапка -->
+<header class="header">
+  <div class = "header-container">
+    <a href class="logo"><h1>Мой сайт</h1></a>
+    <nav class="nav-list">
+        <ul>
+            <li><a href="/">Новости</a></li>
+            <li><a href="/about/">Сводки погоды</a></li>
+            <li><a href="/contact/">Мои посты</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Основной контент страницы -->
+<div class="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!-- Подвал -->
+<footer>
+      <span>
+        © 2025 Мой сайт. Все права защищены.
+      </span>
+</footer>
+
+</body>
+</html>
