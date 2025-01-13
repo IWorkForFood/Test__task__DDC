@@ -18,6 +18,10 @@ redis = "^5.2.1"
 celery = "^5.4.0"
 django-redis = "^5.4.0"
 celerybeat-redis = "^0.1.5"
+django-crontab = "^0.7.1"
+django-celery-beat = "^2.7.0"
+django-celery-results = "^2.5.1"
+requests = "^2.32.3"
 
 
 [build-system]

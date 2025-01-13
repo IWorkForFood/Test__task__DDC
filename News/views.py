@@ -5,15 +5,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
-from PIL import Image
-from io import BytesIO
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.views import View
-from django.http import JsonResponse
-
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
-
+from NewsProject import tasks
+from django.http import HttpResponse
 
 def authorsListNews(request):
 
@@ -63,3 +56,7 @@ def deleteNews(request, pk):
     item = NewsModel.objects.get(id=pk)
     item.delete()
     return redirect('/authors_news')
+
+def test(request):
+    tasks.test_func.delay()
+    return HttpResponse('Done')

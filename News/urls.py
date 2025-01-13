@@ -4,7 +4,8 @@ from News.views import (
                         createNews,
                         updateNews,
                         authorsListNews,
-                        deleteNews
+                        deleteNews,
+                        test,
                         )
 
 urlpatterns = [
@@ -14,6 +15,7 @@ urlpatterns = [
     path('create_news/', createNews, name="create_news"),
     path('update_news/<int:pk>/', updateNews, name="update_news"),
     path('delete_news/<int:pk>/', deleteNews, name="delete_news"),
+    path('', test, name="test")
 ]
 
 '''
