@@ -382,6 +382,23 @@ celery = ">=5.2.7,<6.0"
 Django = ">=3.2.18"
 
 [[package]]
+name = "django-constance"
+version = "4.1.3"
+description = "Django live settings with pluggable backends, including Redis."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_constance-4.1.3-py3-none-any.whl", hash = "sha256:e5e05acbf329c3addec141f3911989d58c423ebc3bc92e1359f9c1dd77e08e95"},
+    {file = "django_constance-4.1.3.tar.gz", hash = "sha256:e8b619ebeab75665d279299cce4bbebbcb0a73caf3539edcd788f2d2275c21a1"},
+]
+
+[package.dependencies]
+redis = {version = "*", optional = true, markers = "extra == \"redis\""}
+
+[package.extras]
+redis = ["redis"]
+
+[[package]]
 name = "django-crontab"
 version = "0.7.1"
 description = "dead simple crontab powered job scheduling for django"
@@ -867,4 +884,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "a22ece9a54fbe4c0ece514f8513e1101713c7cc01abfeeac302713d70ba3e3fe"
+content-hash = "0812fb772d75d0dc2cd5b9d6bcc4a36c40c6bd0261166fa46d0c33923a7f9cb5"

@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from NewsProject import tasks
 from django.http import HttpResponse
+from NewsProject.tasks import send_news_list
 
 def authorsListNews(request):
 
@@ -60,3 +61,7 @@ def deleteNews(request, pk):
 def test(request):
     tasks.test_func.delay()
     return HttpResponse('Done')
+
+def send_mail_to_all(request):
+    send_news_list.delay()
+    return HttpResponse("Sent")

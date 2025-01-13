@@ -14,7 +14,7 @@ from datetime import timedelta
 from pathlib import Path
 import redis
 from environs import Env
-
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'News',
     'django_summernote',
     'django_celery_beat',
-    'django_celery_results'
+    'django_celery_results',
+    'constance',
 ]
 
 MIDDLEWARE = [
@@ -148,11 +149,12 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_IMPORTS = ('NewsProject.tasks',) # we will implement this function in the next step, generally it is appname.file_name
-CELERY_TIMEZONE = 'Asia/Dhaka'
+CELERY_TIMEZONE = 'Europe/Moscow'
 
 #CELERY BEAT
 
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
 
 '''
 CACHES = {
@@ -173,3 +175,24 @@ CACHES = {
     }
 }
 '''
+
+CONSTANCE_CONFIG = {
+    'EMAIL_RECIPIENTS': ('example@example.com', 'Comma-separated list of email recipients', str),
+    'EMAIL_SUBJECT': ('Daily News Report', 'Email subject', str),
+    'EMAIL_BODY': ('Here are the news for today: {news}', 'Email body template', str),
+    'EMAIL_SEND_TIME': ('08:00', 'Time to send email, format HH:MM', str),
+}
+
+CONSTANCE_IGNORE_ADMIN_VERSION_CHECK = True
+
+#SMTP
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "newsprojectsendler@gmail.com"
+EMAIL_HOST_PASSWORD = "dpeuugjuehetngin"
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "Celery <newsprojectsendler@gmail.com>"
+
+

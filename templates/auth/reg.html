@@ -18,9 +18,11 @@
             {% csrf_token %}
             <label for="{{ form.username.id_for_label }}">Логин</label>
             {{ form.username }}
+            <label for="{{ form.email.id_for_label }}">Электронная почта</label>
+            {{ form.email }}
             <label for="{{ form.password.id_for_label }}">Пароль</label>
             {{ form.password }}
-            <label for="{{ form.check_password.id_for_label }}">Пароль</label>
+            <label for="{{ form.check_password.id_for_label }}">Повтор пароля</label>
             {{ form.check_password }}
             <button class="form-button" type="submit">Зарегистрироваться</button>
         </form>
