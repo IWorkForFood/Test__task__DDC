@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include(("News.urls", "News"), namespace="news")),
     path('auth/', include(('user_auth.urls', "user_auth"), namespace="auth")),
     path('summernote/', include('django_summernote.urls')),
+    path('places/', include(('remarkable_places.urls',"remarkable_places"), namespace="places"))
 ]
 
 if settings.DEBUG:

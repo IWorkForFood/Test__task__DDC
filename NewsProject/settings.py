@@ -10,13 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
-from datetime import timedelta
 from pathlib import Path
 import redis
 from environs import Env
-from celery.schedules import crontab
-from django.contrib.auth import get_user_model
-
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,8 +53,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
     'django_celery_results',
     'constance',
-    'django.contrib.gis', 
-    'leaflet',  
+    'django_admin_geomap',
 ]
 
 MIDDLEWARE = [
@@ -202,4 +197,5 @@ CONSTANCE_CONFIG = {
     'EMAIL_SUBJECT': ('Ежедневная рассылка новостей', 'Email subject', str),
     'EMAIL_BODY': ('Новости за сегодня:', 'Email body template', str),
     'EMAIL_SEND_TIME': ('08:00', 'Time to send email, format HH:MM', str),
+    'METEO_SEND_TIME': ('01:00', 'Time to get meteo data, format HH:MM', str),
 }

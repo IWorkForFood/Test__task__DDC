@@ -18,14 +18,22 @@ app.conf.update(timezone = 'Europe/Moscow')
 # Using Redis as the broker for Celery
 app.config_from_object(settings, namespace='CELERY')
 
-send_time = config.EMAIL_SEND_TIME
-hour, minute = [int(x) for x in send_time.split(":")] 
+email_send_time = config.EMAIL_SEND_TIME
+meteosend_time = config.METEO_SEND_TIME
+
+email_send_hour, email_send_minute = [int(x) for x in email_send_time.split(":")] 
+meteo_interval_hours, meteo_interval_minute = [int(x) for x in meteosend_time.split(":")] 
 
 #Celery Beat Settings
 app.conf.beat_schedule = {
     'send-my-news':{
         'task': 'NewsProject.tasks.send_news_list',
-        'schedule': crontab(hour=hour, minute=minute),
+        'schedule': crontab(hour=email_send_hour, minute=email_send_minute),
+       # 'args': ()
+    },
+    'get-meteo-data':{
+        'task': 'NewsProject.tasks.fetch_data_for_all_districts',
+        'schedule': timedelta(hours=meteo_interval_hours, minutes=meteo_interval_minute),
        # 'args': ()
     }
 }

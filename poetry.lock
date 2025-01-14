@@ -348,6 +348,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-admin-geomap"
+version = "1.6"
+description = "Displaying objects at the maps in the Django views and administration site."
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "django_admin_geomap-1.6-py3-none-any.whl", hash = "sha256:1e77201cf8c9f423be9d529e10e333411c9a4245a123ef94860c92979399c366"},
+    {file = "django_admin_geomap-1.6.tar.gz", hash = "sha256:31b24f618b62f1e068d6364891f016fff1e9a438a04db93f438dc5729825719d"},
+]
+
+[[package]]
 name = "django-celery-beat"
 version = "2.7.0"
 description = "Database-backed Periodic Tasks."
@@ -410,23 +421,6 @@ files = [
 
 [package.dependencies]
 Django = ">=1.8"
-
-[[package]]
-name = "django-leaflet"
-version = "0.31.0"
-description = "Use Leaflet in your django projects"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "django_leaflet-0.31.0-py3-none-any.whl", hash = "sha256:914d973a30730eafec4cd822e7107bbd71a6d2e0106b6e919fd9eea67bbcbc5c"},
-    {file = "django_leaflet-0.31.0.tar.gz", hash = "sha256:fb2b75f84aff60d4058659300f31a711554c65d128bade5fa8088637fb0751f7"},
-]
-
-[package.dependencies]
-Django = "*"
-
-[package.extras]
-docs = ["sphinx", "sphinx-autobuild"]
 
 [[package]]
 name = "django-redis"
@@ -901,4 +895,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "a6ee51d2aa2ba2a9d03123ab48e64a2628912203d7a11b102012e598dc4fe271"
+content-hash = "3c08cef8d13e115cac59d6b97e51d393fb4fe834a59275d179cf05d43b6eecca"
