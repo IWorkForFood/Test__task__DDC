@@ -4,16 +4,16 @@
 {% block title %}Редактирование новости{% endblock %}
 
 {% block extra_styles %}
-<!-- Дополнительные стили для этой страницы -->
+
 <link rel="stylesheet" href="{% static 'News/css/news_list.css' %}">
 {% endblock %}
 
 {% block content %}
 
 
-        {% for item in news %}
             <div class="news-container">
-                <div class="separate-elem">
+                {% for item in news %}
+                    <div class="separate-elem">
 
                     {% if item.image_preview %}
                     <div class = "news-image">
@@ -29,11 +29,11 @@
                             <a class="btn-Del" href="{% url 'News:delete_news' item.id %}">Delete</a>
                         </p>
                     </div>
-                </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        
 
-        <div class="add-news-wrapper">
             <a class="add-News" href="{% url 'News:create_news' %}">+</a>
-        </div>
+
 {% endblock %}

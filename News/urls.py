@@ -6,6 +6,7 @@ from News.views import (
                         authorsListNews,
                         deleteNews,
                         send_mail_to_all,
+                        home_view
                         )
 
 urlpatterns = [
@@ -15,7 +16,8 @@ urlpatterns = [
     path('create_news/', createNews, name="create_news"),
     path('update_news/<int:pk>/', updateNews, name="update_news"),
     path('delete_news/<int:pk>/', deleteNews, name="delete_news"),
-    path('send_mail/', send_mail_to_all, name="send_mail")
+    path('send_mail/', send_mail_to_all, name="send_mail"),
+    path('home/', home_view, name="home")
 ]
 
 '''

@@ -1,10 +1,22 @@
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Inter', serif;
+}
+html, body {
+    min-height: 100vh; 
+    font-family: 'Inter', serif;
+}
+body {
+    display: flex;
+    flex-direction: column; 
+}
 .header {
     background-color: #333;
     color: white;
     height: 70px;
     border-bottom: 3px solid #444;
     margin-bottom: 60px;
-    font-family: 'Inter', serif;
     font-size: 0.90rem;
 }
 .header-container{
@@ -27,9 +39,9 @@
     color:aquamarine;
 }
 .content{
-    width: 60%;
+    width: 100%;
     margin:auto;
-    
+    flex:1;
 }
 a {
     color: inherit; 

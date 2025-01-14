@@ -1,0 +1,36 @@
+{% extends "News/base.html" %}
+{% load static %}
+
+{% block title %}Редактирование новости{% endblock %}
+
+{% block extra_styles %}
+<!-- Дополнительные стили для этой страницы -->
+<link rel="stylesheet" href="{% static 'News/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+            <div class="news-container">
+                {% for item in news %}
+
+                    <div class="separate-elem">
+                        {% if item.image_preview %}
+                        <div class = "news-image">
+                            <img src="{{item.image_preview.url}}">
+                        </div>
+                        {% endif %}
+
+                        <div class = "news-text-content">
+                            <span class = 'title'>{{item.title}}</span>
+
+                            <span class="text-btns">
+                                <strong>{{item.author}}</strong><br/>
+                                {{item.publication_date}}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        
+
+{% endblock %}

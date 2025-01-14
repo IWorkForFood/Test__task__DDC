@@ -58,6 +58,12 @@ def deleteNews(request, pk):
     item.delete()
     return redirect('/authors_news')
 
+def home_view(request):
+    whole_news = NewsModel.objects.all()
+    context={'news':whole_news}
+    return render(request, 'News/home.html', context=context)
+
+
 def test(request):
     tasks.test_func.delay()
     return HttpResponse('Done')

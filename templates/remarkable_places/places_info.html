@@ -1,0 +1,40 @@
+{% extends "remarkable_places/base.html" %}
+{% load static %}
+
+{% block extra_styles %}
+<!-- Дополнительные стили для этой страницы -->
+<link rel="stylesheet" href="{% static 'News/css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="news-container">
+    {% for place in remarkable_places %}
+        <div class="separate-elem">
+            <div class = "news-image">
+                <strong>Место:</strong> {{ place.name }}<br>
+                <strong>Рейтинг:</strong> {{ place.rating }} / 5<br>
+            </div>
+            <div class = "news-text-content">
+
+            {% with first_weather=place.weathersummary_set.first %}
+
+                {% if first_weather %}
+                <div>
+                    <strong>-Краткая сводка-</strong><br>
+                    <strong>Температура:</strong> {{ first_weather.temperature }}°C<br>
+                    <strong>Влажность:</strong> {{ first_weather.humidity }}%<br>
+                    <strong>Направление ветра:</strong> {{ first_weather.wind_direction }}<br>
+                    <strong>Скорость ветра:</strong> {{ first_weather.wind_speed }} м/с<br>
+                </div>
+                {% else %}
+                    <strong>Нет доступной сводки погоды для этого места</strong><br>
+                {% endif %}
+            {% endwith %}
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}

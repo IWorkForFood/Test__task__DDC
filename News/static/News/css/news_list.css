@@ -2,6 +2,10 @@
     font-family: 'Inter', serif;
     display: flex;
     position:relative;
+    flex-direction:column;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
 }
 
 .news-container:first-child{
@@ -19,7 +23,7 @@
 .separate-elem{
     display: flex;
     width:100%;
-    border-left: 1px solid #cbcbcb;
+    border: 1px solid #cbcbcb;
 }
 
 .news-container::after {
