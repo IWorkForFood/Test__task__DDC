@@ -41,7 +41,7 @@ def registration_view(request):
         reg_form = RegistrationForm(request.POST)
         if reg_form.is_valid():
             username = reg_form.cleaned_data['username']
-            existing_user = User.objects.get(username=username)
+            existing_user = User.objects.filter(username=username).first()
             if not existing_user:
                 password = reg_form.cleaned_data['password']
                 check_password = reg_form.cleaned_data['check_password']

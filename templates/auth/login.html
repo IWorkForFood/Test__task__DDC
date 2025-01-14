@@ -20,6 +20,8 @@
             {% csrf_token %}
             <label for="{{ form.username.id_for_label }}">Логин</label>
             {{ form.username }}
+            <label for="{{ form.email.id_for_label }}">Электронная почта</label>
+            {{ form.email }}
             <label for="{{ form.password.id_for_label }}">Пароль</label>
             {{ form.password }}
             <button class="form-button" type="submit">Войти</button>

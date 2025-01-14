@@ -5,6 +5,7 @@ from celery import Celery
 from celery.schedules import crontab
 from django.conf import settings
 from datetime import timedelta
+from constance import config
 
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'NewsProject.settings')
@@ -17,11 +18,14 @@ app.conf.update(timezone = 'Europe/Moscow')
 # Using Redis as the broker for Celery
 app.config_from_object(settings, namespace='CELERY')
 
+send_time = config.EMAIL_SEND_TIME
+hour, minute = [int(x) for x in send_time.split(":")] 
+
 #Celery Beat Settings
-app.conf.beat_shedule = {
+app.conf.beat_schedule = {
     'send-my-news':{
         'task': 'NewsProject.tasks.send_news_list',
-        'schedule': crontab(hour=8, minute=0),
+        'schedule': crontab(hour=hour, minute=minute),
        # 'args': ()
     }
 }

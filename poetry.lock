@@ -412,6 +412,23 @@ files = [
 Django = ">=1.8"
 
 [[package]]
+name = "django-leaflet"
+version = "0.31.0"
+description = "Use Leaflet in your django projects"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "django_leaflet-0.31.0-py3-none-any.whl", hash = "sha256:914d973a30730eafec4cd822e7107bbd71a6d2e0106b6e919fd9eea67bbcbc5c"},
+    {file = "django_leaflet-0.31.0.tar.gz", hash = "sha256:fb2b75f84aff60d4058659300f31a711554c65d128bade5fa8088637fb0751f7"},
+]
+
+[package.dependencies]
+Django = "*"
+
+[package.extras]
+docs = ["sphinx", "sphinx-autobuild"]
+
+[[package]]
 name = "django-redis"
 version = "5.4.0"
 description = "Full featured redis cache backend for Django."
@@ -884,4 +901,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "0812fb772d75d0dc2cd5b9d6bcc4a36c40c6bd0261166fa46d0c33923a7f9cb5"
+content-hash = "a6ee51d2aa2ba2a9d03123ab48e64a2628912203d7a11b102012e598dc4fe271"

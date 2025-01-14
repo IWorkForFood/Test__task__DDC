@@ -15,6 +15,9 @@ from pathlib import Path
 import redis
 from environs import Env
 from celery.schedules import crontab
+from django.contrib.auth import get_user_model
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,10 +51,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'News',
+    'user_auth',
+    'remarkable_places',
     'django_summernote',
     'django_celery_beat',
     'django_celery_results',
     'constance',
+    'django.contrib.gis', 
+    'leaflet',  
 ]
 
 MIDDLEWARE = [
@@ -176,13 +183,6 @@ CACHES = {
 }
 '''
 
-CONSTANCE_CONFIG = {
-    'EMAIL_RECIPIENTS': ('example@example.com', 'Comma-separated list of email recipients', str),
-    'EMAIL_SUBJECT': ('Daily News Report', 'Email subject', str),
-    'EMAIL_BODY': ('Here are the news for today: {news}', 'Email body template', str),
-    'EMAIL_SEND_TIME': ('08:00', 'Time to send email, format HH:MM', str),
-}
-
 CONSTANCE_IGNORE_ADMIN_VERSION_CHECK = True
 
 #SMTP
@@ -195,4 +195,11 @@ EMAIL_HOST_PASSWORD = "dpeuugjuehetngin"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "Celery <newsprojectsendler@gmail.com>"
 
+#CONSTANCE
 
+CONSTANCE_CONFIG = {
+    'EMAIL_RECIPIENTS': ('-', 'Оставьте "-", если вы хотите отправить электронное письмо каждому пользователю в базе данных, или запишите свои адреса через пробел', str),
+    'EMAIL_SUBJECT': ('Ежедневная рассылка новостей', 'Email subject', str),
+    'EMAIL_BODY': ('Новости за сегодня:', 'Email body template', str),
+    'EMAIL_SEND_TIME': ('08:00', 'Time to send email, format HH:MM', str),
+}
