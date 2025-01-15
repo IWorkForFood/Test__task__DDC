@@ -1,0 +1,102 @@
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0px; 
+    column-gap: 20px;
+    padding:0 20px;
+    font-family: 'Inter', serif;
+  }
+  
+  .separate-elem {
+    display: flex;
+    background-color: rgb(255, 255, 255); 
+    padding: 20px;
+    border-top: 1px solid #6b6b6b;
+    min-height:80px;
+    max-height: 200px;
+    font-family: 'Inter', serif;
+  }
+
+  .separate-elem:hover {
+    color: gray; 
+    box-shadow: inset 0 4px 4px rgba(34, 34, 34, 0.2);
+  }
+  
+  .news-image{
+    display: flex;
+    flex:1;
+    height: auto;
+    overflow: hidden;
+    align-items: center;
+  }
+
+  .place-wrapper{
+    display: flex;
+    flex:1;
+    height: auto;
+    overflow: hidden;
+    flex-direction: column;
+    align-items:start;
+  }
+
+  .news-image img {
+    width: 100%; 
+  }
+  
+  .news-text-content {
+    flex: 1;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 10px;
+    align-items: end;
+  }
+
+  .title{
+    font-weight: bold;
+    font-size: 2em;
+    display: block;
+    font-family: 'Inter', serif;
+  }
+  
+  .text-btns {
+    margin-top: 10px;
+    font-size: 1.4em;
+    display: block;
+  }
+  
+  .add-News {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  .add-News:hover {
+    background-color: #0056b3;
+  }
+
+  .form-container{
+    padding: 5px 40px;
+  }
+
+  .form-container form{
+      display: flex;
+      gap: 15px; 
+      align-items: center; 
+      flex-direction: row;
+  }
+  .form-container form button{
+    padding: 0.3rem 1.3rem;
+    border: none;
+    background-color: aquamarine;
+    border-radius: 0.4rem;
+  }
+  .form-container form button:hover{
+    cursor: pointer;
+  }

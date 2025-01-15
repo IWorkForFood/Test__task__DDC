@@ -37,12 +37,13 @@ def export_weather_summary_to_xlsx(request):
     
     if request.method == 'GET' and form.is_valid():
 
-        remarkable_place_name = form.cleaned_data['remarkable_place']
+        remarkable_place = form.cleaned_data['remarkable_place']
+        place_name = remarkable_place.name
         start_date = form.cleaned_data['start_date']
         end_date = form.cleaned_data['end_date']
         
         weather_summaries = WeatherSummary.objects.filter(
-            remarkable_place__name=remarkable_place_name,
+            remarkable_place__name=place_name,
             timestamp__range=[start_date, end_date]
         )
 
