@@ -63,6 +63,10 @@ def home_view(request):
     context={'news':whole_news}
     return render(request, 'News/home.html', context=context)
 
+def read_news(request, pk):
+    item = NewsModel.objects.get(pk=pk)
+    context = {'item':item}
+    return render(request, 'News/read_news.html', context=context)
 
 def test(request):
     tasks.test_func.delay()

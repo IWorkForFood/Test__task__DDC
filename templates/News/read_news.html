@@ -1,0 +1,24 @@
+{% extends "News/base.html" %}
+{% load static %}
+
+{% block title %}Редактирование новости{% endblock %}
+
+{% block extra_styles %}
+<!-- Дополнительные стили для этой страницы -->
+<link rel="stylesheet" href="{% static 'News/css/read_news.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<h1 class="headline">{{ item.title }}</h1>
+        {% if item.main_image %}
+        <img src="{{ item.main_image.url }}" alt="Описание картинки" class="news-image">
+        {% endif %}
+        <p class="news-text">
+            {{ item.text | safe}}
+        </p>
+
+</div>
+
+{% endblock %}

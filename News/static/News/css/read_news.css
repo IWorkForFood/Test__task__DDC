@@ -1,0 +1,26 @@
+.container {
+    max-width: 800px;
+    min-height: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.headline {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.news-image {
+    float: left;
+    margin-right: 15px; 
+    max-width: 100%; 
+    height: auto; 
+}
+
+.news-text {
+    margin-bottom: 15px; 
+}

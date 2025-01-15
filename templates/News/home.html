@@ -12,7 +12,7 @@
 
             <div class="news-container">
                 {% for item in news %}
-
+                <a class="btn-read" href="{% url 'News:read_news' item.id %}">
                     <div class="separate-elem">
                         {% if item.image_preview %}
                         <div class = "news-image">
@@ -29,6 +29,7 @@
                             </span>
                         </div>
                     </div>
+                </a>
                 {% endfor %}
             </div>
         

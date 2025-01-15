@@ -9,7 +9,7 @@ class RemarkablePlace(models.Model, GeoItem):
     lat = models.FloatField()  # широта
     rating = models.PositiveIntegerField( 
         default=3,
-        validators=[MinValueValidator(0), MaxValueValidator(5)]
+        validators=[MinValueValidator(0), MaxValueValidator(25)]
     )
 
     @property
