@@ -10,40 +10,38 @@
 ## Основная часть
 
 ### CRUD Новостей с данными (где?)
+
 нужная вкладка
+<img width="263" alt="3-Crud" src="https://github.com/user-attachments/assets/f829b804-7c82-4eda-a7c7-a94e9493e0d6" />
 
-<img width="263" alt="3-Crud" src="https://github.com/user-attachments/assets/9da86178-9f03-4f9f-bf08-bb7a7cf8f836" />
+Кнопкa для создания:
+<img width="161" alt="5 - Для создания поста" src="https://github.com/user-attachments/assets/b2494cd6-d482-4373-b18b-f4d69dbe33b3" />
 
-Кнопки для создания
-
-<img width="161" alt="5 - Для создания поста" src="https://github.com/user-attachments/assets/e39c6066-fe32-4be5-af82-54cf62606893" />
-
-после создания еще редактирования, удаления
-
-<img width="466" alt="Для удаления_создания" src="https://github.com/user-attachments/assets/d94cb0a6-96ff-4936-9420-449d8666f168" />
+После создания поста мы можем отредактировать или удалить его:
+<img width="466" alt="Для удаления_создания" src="https://github.com/user-attachments/assets/0b9929bb-4211-4ab9-beaf-6e682a8d9fde" />
 
 ### Выполнение периодической задачи (celery) на отправку email о Новостях, опубликованных сегодня, с настройками (constance) + Сводка погоды в Примечательном месте
 Все celery-таски находятся в папке проекта NewsProject в файле tasks.py
 
-Параметры, задающиеся через constance в admin-panel:
-<img width="425" alt="Сщтыефтсу" src="https://github.com/user-attachments/assets/545dfb96-74e3-4f76-9783-cfb800eae6fa" />
-
-<img width="433" alt="Параметры для celery-тасок" src="https://github.com/user-attachments/assets/094abd1c-1c75-4bc3-a050-9fb45832fe35" />
+Параметры, задающиеся через constance в admin-panel(используются для настройки Celery-тасок):
+<img width="433" alt="Параметры для celery-тасок" src="https://github.com/user-attachments/assets/8b83bafe-94bb-4bbf-80d1-ee3a7db6e0f8" />
 
 ### Импорт Примечательных мест из xlsx-файла с данными
 В админ панели можно импортировать данные о примечательных местах из xlsx-файла(импортирует из активного листа, файл подается без заголовков для колонок):
-<img width="392" alt="Remarkable-xl" src="https://github.com/user-attachments/assets/a562c928-afb4-44a6-8282-f61143f1965e" />
+<img width="392" alt="Remarkable-xl" src="https://github.com/user-attachments/assets/725e5ff8-f2d4-4cd1-8d96-f2a62a525f03" />
 
-Из этого файла добавиться одна запись
-<img width="251" alt="Exc" src="https://github.com/user-attachments/assets/56c1ab9c-4b6c-4305-b896-9288718c0169" />
+Например, после выбора этого файла будет создана одна новая запись(представлен пример файла):
+<img width="251" alt="Exc" src="https://github.com/user-attachments/assets/ef22d2ee-604a-493f-bd52-b252f8f4f5e9" />
 
 ### Просмотр и редактирование Примечательных мест(карты)
 Для всех объектов в админ панели под полями расположен виджет карты. Для изменения координа перетажите маркер(Нужно наводить на самое основание, тогда появится синяя точка)
-<img width="697" alt="Maps" src="https://github.com/user-attachments/assets/2302f605-0f99-43d6-b49a-c5606b9cb154" />
+<img width="697" alt="Maps" src="https://github.com/user-attachments/assets/eb6449ed-2b12-4cbc-b72e-7a4134261ca2" />
+
 
 ### Экспорт Сводки погоды в xlsx-файл
 В разделе "сводки погоды" имеется форма для получения всех записей о конкретном примечательном месте. После заполнения полей и нажатия будет загружен xlsx-файл
-<img width="661" alt="Водки" src="https://github.com/user-attachments/assets/e7b31984-5faa-4798-97b7-0ef1586ee272" />
+<img width="661" alt="Водки" src="https://github.com/user-attachments/assets/55f7fff8-90f3-420f-9c5b-7d859ed5c05b" />
+
 
 ### Запуск
 
