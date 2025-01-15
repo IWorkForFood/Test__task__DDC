@@ -50,5 +50,6 @@ class WSAdmin(admin.ModelAdmin):
         ]
     list_filter = ['remarkable_place__name', 'timestamp']
 
+    
 admin.site.register(RemarkablePlace, RPAdmin)
 admin.site.register(WeatherSummary, WSAdmin)

@@ -4,7 +4,7 @@ from django_admin_geomap import GeoItem
 
 class RemarkablePlace(models.Model, GeoItem):
 
-    name = models.CharField(max_length=255) 
+    name = models.CharField(max_length=255, unique=True) 
     lon = models.FloatField()  # долгота
     lat = models.FloatField()  # широта
     rating = models.PositiveIntegerField( 

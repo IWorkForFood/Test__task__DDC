@@ -7,6 +7,26 @@
 {% endblock %}
 
 {% block content %}
+<div class="form-container">
+    <form class="xl_form" method="get" action="{% url 'remarkable_places:export_weather_summary' %}">
+        {% csrf_token %}
+        <div>
+            <label for="remarkable_place">Место</label>
+            {{ form.remarkable_place }}
+        </div>
+
+        <div>
+            <label for="start_date">Нижняя граница</label>
+            {{ form.start_date }}
+        </div>
+
+        <div>
+            <label for="end_date">Верхняя граница</label>
+            {{ form.end_date }}
+        </div>
+        <button type="submit">Экспортировать</button>
+    </form>
+</div>
 
     <div class="news-container">
     {% for place in remarkable_places %}
