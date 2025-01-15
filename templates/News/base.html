@@ -25,9 +25,16 @@
         <ul>
             <li><a href="{% url 'News:home' %}">Новости</a></li>
             <li><a href="{% url 'remarkable_places:get_all_places' %}">Сводки погоды</a></li>
-            <li><a href="{% url 'News:authors_news' %}">Мои посты</a></li>
+            {% if user.is_authenticated %}<li><a href="{% url 'News:authors_news' %}">Мои посты</a></li>{% endif %}
         </ul>
     </nav>
+    {% if user.is_authenticated %}
+      <a class="auth_btn" href="{% url 'user_auth:logout' %}">
+          Выход
+      </a>
+    {% else %}
+      <a class="auth_btn" href="{% url 'user_auth:login' %}">Войти</a>
+    {% endif %}
   </div>
 </header>
 

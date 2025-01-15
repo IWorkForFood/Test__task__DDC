@@ -53,3 +53,9 @@ footer {
     align-items: center;       
     background-color: #f8f9fa; 
 }
+.auth_btn{
+    padding: 0.5rem 2rem;
+    border: 2px solid aquamarine !important;
+    color: aquamarine !important;
+    border-radius: 0.4rem;
+}

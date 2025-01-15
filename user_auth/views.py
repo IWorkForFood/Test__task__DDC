@@ -10,6 +10,7 @@ from user_auth.forms import RegistrationForm
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
 
 # Create your views here.
 
@@ -61,5 +62,9 @@ def registration_view(request):
         "form": reg_form,
     }
     return render(request, "auth/reg.html", context=context)
+
+def logout_view(request):
+    logout(request)
+    return redirect('/auth/login/')
 
 

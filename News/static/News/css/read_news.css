@@ -1,6 +1,7 @@
-.container {
+.article {
+    display: block;
     max-width: 800px;
-    min-height: 100%;
+    height: auto;
     margin: 20px auto;
     padding: 20px;
     background: white;
@@ -15,7 +16,7 @@
 }
 
 .news-image {
-    float: left;
+    
     margin-right: 15px; 
     max-width: 100%; 
     height: auto; 
